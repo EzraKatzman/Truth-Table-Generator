@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" samesite="none">
+    <link rel = "stylesheet" href = "LogicStyles.css" type = "text/css">
+    <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity = "sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" samesite="none">
+    <title>Truth Table Generator</title>
+    <script src = "prototype.js"></script>
+    <script src = "LogicGenerator.js"></script>
+</head>
+<body>
+    <div class = "container-fluid h-100 d-flex flex-column">
+    <div class = "jumbotron">
+        <div class = "row h-50">
+            <div class = "col-5">
+                <h1>Truth Table Generator</h1>
+                <p>The program will accept all letters of the alphabet (non-case-sensetive), <span id = "wikiFake" class = "hover-reveal" data-tooltip="To insert the connective, either press the button or type in its name! It's name can be found by hovering over the button">
+                   logical connectives</span>, and parentheses. <strong>Using numbers will throw an error.</strong> The program will only take well formed formulas, and will inform you if yours is not. Well formed means that all variables and 
+                   connectives are in appropriate parentheses (the full formula should also be surrounded), there are no incomplete sets of brackets, and that in the initial half of the proposition, the amount of left brackets is greater than that of the right
+                   brackets.</p>
+            </div>    
+            <div class = "col-7">
+                <div class = "centerpiece">
+                    <p>
+                        <input type = "text" id = "proposition" name = "proposition" placeholder = "Example: (P&#709;(&#172;Q))"> <button id = "evaluate" type = "button" class = "btn btn-outline-success">Evaluate</button> <button id = "clear" type = "button" class = "btn btn-outline-danger">Clear</button>
+                    </p>
+                    <p> 
+                        <div class = "btn-group">
+                            <!-- Buttons to replace aliases for the logical operators, keeps the input cleaner and easier to test for proper formatting -->
+                            <button class = "btn btn-outline-primary hover-reveal" data-tooltip = "'Not' connective" id = "Not">&#172;</button>
+                            <button class = "btn btn-outline-primary hover-reveal" data-tooltip = "'And' connective" id = "And">&#708;</button>
+                            <button class = "btn btn-outline-primary hover-reveal" data-tooltip = "'Or' connective" id = "Or">&#709;</button>
+                            <button class = "btn btn-outline-primary hover-reveal" data-tooltip = "'Implies' connective" id = "Implies">&#8594;</button>
+                            <button class = "btn btn-outline-primary hover-reveal" data-tooltip = "'Iff' connective" id = "Iff">&#8596;</button>
+                            <button class = "btn btn-outline-primary hover-reveal" data-tooltip = "'Xor (exclusive or)' connective" id = "Xor">&#8853;</button>
+                        </div>
+                        <div class = "div-tooltip"></div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Jumbotron border ends here -->
+    <div class = "row h-50">
+        <div class = "col">
+            <div class = "table-wrapper-scroll-y my-custom-scrollbar">
+                <div class = "table-borered w-auto" id = "resultTable">
+                    <!-- The evaluated results will be placed in a table here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
