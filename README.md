@@ -14,4 +14,4 @@ This program will take all sorts of propositional logic statements, test them to
 
 ## Contact
 
-**Azriel Katzman** - Initial work & Front End Developer - [EzraKatzman](https://github.com/EzraKatzman)
+**Azriel Katzman** - Initial work & Front End Developer - [EzraKatzman](https://github.com/EzraKatzman), Email - ezkatzman@gmail.com
