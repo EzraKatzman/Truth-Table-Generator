@@ -132,6 +132,7 @@ function expressionCheck() {
             }
         } else if (!(testString.charAt(i).match(/\u02C4/) || testString.charAt(i).match(/\u02C5/) || testString.charAt(i).match(/\u2192/) || testString.charAt(i).match(/\u2295/) || testString.charAt(i).match(/\u2194/))) {
             alert ("Unrecognized character " + testString.charAt(i));
+            pass = false;
         }
     }
     //WFF tests
