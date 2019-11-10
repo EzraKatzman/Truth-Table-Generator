@@ -248,7 +248,7 @@ function stringEvaluate(row, uniqueVars, table, varList) {
                 }
             } else if (operationIndex.match(/\u2295/)){
                 //"Xor" Logic
-                if (previousElement != nextElement && previousElement == 0 || nextElement == 0) {
+                if (previousElement != nextElement) {
                     testString = testString.replace(operation, 0);
                 } else {
                     testString = testString.replace(operation, 1);
