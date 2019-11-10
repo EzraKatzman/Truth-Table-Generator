@@ -115,6 +115,8 @@ function expressionCheck() {
         variables = 0,
         pass = true;
 
+    testString = testString.replace(/\s/g, '');
+
     for (var i = 0; i < testString.length; i++) { 
         if (testString.charAt(i).match(/\u0028/)) {
             leftBracket = leftBracket + 1;
@@ -132,7 +134,6 @@ function expressionCheck() {
             }
         } else if (!(testString.charAt(i).match(/\u02C4/) || testString.charAt(i).match(/\u02C5/) || testString.charAt(i).match(/\u2192/) || testString.charAt(i).match(/\u2295/) || testString.charAt(i).match(/\u2194/))) {
             alert ("Unrecognized character " + testString.charAt(i));
-            pass = false;
         }
     }
     //WFF tests
@@ -192,6 +193,8 @@ function truthAssignments() {
 function stringEvaluate(row, uniqueVars, table, varList) {
     var testString = $("proposition").value,
         n;
+        
+    testString = testString.replace(/\s/g, '');
     //Replaces all the inputted variables with their truth assignments
     for (n of testString) {
         if (uniqueVars.includes(n)) {
