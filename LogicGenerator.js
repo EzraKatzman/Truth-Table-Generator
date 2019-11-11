@@ -14,11 +14,15 @@ window.onload = function() {
     $("clear").observe("click", clearInput);
 }
 
-//This function adds the special operators to the input string -> based on which button was pressed.
+//This function adds the special operators to the input string based on which button was pressed.
 function addOperator() {
     var text = $("proposition");
-    text.value += this.innerHTML;
     text.focus();
+    var success = document.execCommand('insertText', false, this.innerHTML);
+    //For firefox and old versions of IE
+    if (!success) {
+        text.setRangeText(this.innerHTML);
+    }
 }
 
 //Adds tooltips to all the buttons and to the words "logical connectives" Courtesy of "All Things Javascript, LLC" Youtube channel
