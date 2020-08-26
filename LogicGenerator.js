@@ -272,7 +272,7 @@ function stringEvaluate(row, uniqueVars, table, varList) {
 function tableBuilder(uniqueVars, testString, table) {
     var given = document.createElement("tr");
     given.className = "topRow";
-    given.style.backgroundColor = "lightBlue";
+    given.style.backgroundColor = "lightblue";
     for (var n = 0; n < uniqueVars.length; n ++) {
         var cell = document.createElement("th");
         cell.innerHTML = uniqueVars[n];
