@@ -150,13 +150,13 @@ function expressionCheck() {
                     alert("An operator is missing between two brackets");
                 }
             } else {
-                alert("This function is not a well formed formula");
+                alert("This function is missing brackets somewhere");
             }
         } else {
             alert("There is an open set of brackets");
         }
     } else {
-        alert("The function must start with either an open bracket or a variable");
+        alert("The function must start with an open bracket");
     }
 }
 
